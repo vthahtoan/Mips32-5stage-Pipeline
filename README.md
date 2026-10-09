@@ -1,53 +1,155 @@
 # 32-bit 5-Stage Pipelined MIPS Processor
 
-> A complete Register Transfer Level (RTL) implementation of a 32-bit MIPS processor featuring a 5-stage pipeline, designed in Verilog HDL.
+A Verilog implementation of a five-stage MIPS processor with a class-based
+SystemVerilog verification environment.
+
+The processor includes forwarding, load-use stalls and branch/jump flushing.
+Verification uses directed tests, constrained-random programs, an architectural
+reference model, a scoreboard and functional coverage.
 
 ## Repository Structure
 
 ```text
-├── asm_test/   # MIPS Assembly test scripts and generated Hex machine code
-├── docs/       # Project reports, presentation slides, and waveform images
-├── src/        # Verilog HDL source files (Datapath, Controller, Hazard Units)
-├── tb/         # Testbench files for ModelSim verification
-└── README.md
+├── results/
+├── src/
+├── tb/
+├── README.md
+└── instruction.txt
 ```
 
-## Overview
-This repository contains the hardware design and verification environment for a MIPS32 microarchitecture. The processor divides instruction execution into five independent stages (IF, ID, EX, MEM, WB) to achieve high throughput and instruction-level parallelism. The RTL design natively handles data and control hazards and has been fully verified through simulation.
+- `src/`: processor RTL.
+- `tb/`: SystemVerilog packages, testbenches and simulation scripts.
+- `results/`: archived regression logs and coverage reports.
+- `instruction.txt`: initial instruction-memory contents.
+
+## Processor Architecture
+
+The processor uses five pipeline stages:
+
+1. **IF**: fetch the instruction and update the program counter.
+2. **ID**: decode the instruction and read the register file.
+3. **EX**: execute the operation and evaluate branches.
+4. **MEM**: access data memory.
+5. **WB**: write the result to the register file.
+
+Forwarding supplies dependent operands from later pipeline stages.
+The hazard detection unit inserts bubbles for load-use dependencies.
+Taken branches flush younger instructions.
+
+Branches resolve in EX, while jumps are handled in ID. An older taken branch
+cancels a younger jump. This implementation uses no branch delay slot.
 
 ## Supported Instructions
-The processor supports a comprehensive subset of the MIPS32 instruction set:
-* **R-Type:** `add`, `sub`, `and`, `or`, `nor`, `xor`, `slt`, `sll`, `srl`
-* **I-Type:** `addi`, `andi`, `ori`, `lw`, `sw`, `beq`, `bne`
-* **J-Type:** `jump`
 
-## Key Features
-* **Data Hazard Resolution:** Integrates a Forwarding Unit to bypass data dependencies across pipeline stages without stalling.
-* **Load-Use Handling:** Features a Hazard Detection Unit that automatically inserts pipeline bubbles (stalls) when a memory read dependency is detected.
-* **Control Hazard Mitigation:** Employs a hardware Flush mechanism to invalidate incorrect instruction fetches during branch operations.
+The verified subset contains 17 instructions:
 
-## Synthesis & Timing Analysis Results
-While physical FPGA deployment is a future step, the RTL design was synthesized using Quartus II targeted at the **Cyclone II (EP2C35F672C6)** FPGA to evaluate hardware resource utilization and theoretical performance. 
-* **Total Logic Elements:** 2,967 (9% utilization)
-* **Dedicated Logic Registers:** 1,493 (4% utilization)
-* **Maximum Frequency (Fmax):** 68.59 MHz (Slow Model)
-* **Minimum Clock Period:** T_min ≈ 14.58 ns
+- **R-Type:** `add`, `sub`, `and`, `or`, `nor`, `xor`, `slt`, `sll`, `srl`
+- **I-Type:** `addi`, `andi`, `ori`, `lw`, `sw`, `beq`, `bne`
+- **J-Type:** `j`
 
-## How to Run & Simulate
-The processor's functionality is verified entirely via RTL simulation. Follow these steps to generate machine code and simulate the design:
+## Verification Environment
 
-### 1. Generate Machine Code (Using MARS 4.5)
-* Open your MIPS Assembly test script (`.asm` file) from the `asm_test/` directory in the **MARS 4.5** simulator.
-* Click the **Assemble** button (or press `F3`) to compile the assembly code.
-* Go to **File -> Dump Memory**, select the **Hexadecimal Text** format, and export the file.
-* Rename the exported file to `instruction.txt` and place it in the `src/` directory (alongside the `IMEM.v` module).
+```text
+Generator → Encoder → CPU program
+                  └→ Reference model → Expected state
 
-### 2. Run RTL Simulation (Using ModelSim)
-* Open **ModelSim** and create a new project.
-* Add all Verilog files (`.v`) from the `src/` and `tb/` directories to the project and click **Compile All**.
-* Start a simulation on the top-level testbench module (`tb_toplevel.v`).
-* Add critical signals to the Wave window (e.g., `clk`, `pc_out`, `writeback`, `rd`, and hazard control flags).
-* **Run** the simulation (e.g., type `run 3000ns` in the transcript) to observe the 5-stage pipeline execution, data forwarding, and hazard stalling in the waveform viewer.
+CPU state and event counts → Scoreboard
+CPU pipeline events → Coverage monitor → Functional coverage
+```
+
+The reference model executes the program independently of DUT results.
+The scoreboard compares all 32 registers, 256 memory words and execution counts.
+
+Expected stall counts come from pipeline scenarios because the architectural
+reference model does not simulate pipeline cycles.
+
+The environment includes:
+
+- Directed tests for arithmetic, shifts, memory and control flow.
+- Encoding and reference-model checks against known results.
+- Constrained-random ALU, memory and branch/jump programs.
+- Register and memory fault injection to validate scoreboard error detection.
+- Functional coverage sampled from actual DUT events.
+- A separate coverage-monitor self-check, excluded from CPU coverage.
+
+## Verification Results
+
+The archived regression completed on **9 October 2026** using
+**Siemens QuestaSim 2021.2_1**.
+
+| Metric | Result |
+|---|---:|
+| Positive CPU runs | 18 |
+| Positive scoreboard comparisons | 5290 |
+| Fault-injection runs | 2; both detected |
+| Random seeds | 1, 7, 42, 2026 |
+| Functional coverage plan | 64/64 bins |
+| Native covergroup coverage | 100.00% |
+| Covergroup types | 11 |
+
+The positive-run totals include directed tests repeated in the baseline and
+coverage regression.
+
+Coverage includes instruction kinds, immediate and shift boundaries, register
+destinations, memory address and offset classes, branch outcomes, jump
+cancellation, forwarding and load-use scenarios.
+
+Archived evidence:
+
+- [Final result](results/FINAL_RESULT.txt)
+- [Coverage plan](results/coverage_plan.txt)
+- [Native coverage report](results/functional_coverage_report.txt)
+- [Regression log](results/functional_coverage_suite.log)
+- [Fault-injection log](results/scoreboard_negative.log)
+
+## Running the Regression
+
+Use a Linux environment with QuestaSim licenses supporting SystemVerilog class
+randomization and functional covergroups. The commands `vsim`, `vlog` and
+`vcover` must be available.
+
+From the repository root:
+
+```sh
+cd tb
+vsim -c -l final_console.log -do 'do run_final_regression.do; quit -f'
+```
+
+The script runs directed and fault-injection tests, followed by the coverage
+regression. It requires all 64 planned bins to be hit.
+
+A successful run ends with:
+
+```text
+FINAL VERIFICATION PASS
+```
+
+Fault-injection tests intentionally produce a scoreboard failure. Their expected
+outcome is the subsequent negative-suite PASS.
+
+New results and a source snapshot are saved under:
+
+```text
+tb/final_regression_run/<timestamp>/
+```
+
+The scripts copy root `instruction.txt` into the simulation working directory.
+IMEM reads it at startup; the verification testbenches then replace its contents
+with their own test programs.
+
+## Verification Scope
+
+The scoreboard checks final architectural state and event counts rather than
+comparing every instruction retirement. Random memory and control-flow tests
+use scenario templates with randomized operands.
+
+Achieving 100% functional coverage closes the documented 64-bin plan. It does
+not establish exhaustive CPU correctness or RTL code coverage.
+
+Exceptions, interrupts, caches, physical FPGA deployment and the complete
+MIPS ISA are outside the verified scope.
 
 ---
-*Developed by Võ Thanh Toàn and Trương Đình Trọng at Trường Đại học Công nghệ Thông tin (UIT) - ĐHQG-HCM.*
+
+Developed by **Võ Thanh Toàn**  
+University of Information Technology, VNU-HCM.
