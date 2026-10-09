@@ -1,0 +1,16 @@
+FINAL VERIFICATION PASS
+Completed: 2026-10-09 15:00:30 +07
+Tool: Questa Sim-64 vsim 2021.2_1 Simulator 2021.05 May 15 2021
+
+Seeds: 1 7 42 2026
+Positive CPU runs: 18 (3 directed baseline + 15 coverage regression).
+Positive scoreboard comparisons: 5290 (879 + 4411).
+Negative CPU runs: 2; register and memory corruption detected.
+Monitor self-check: PASS; artificial events excluded from CPU coverage.
+Coverage regression executed instructions: 1622
+Functional coverage plan: 64/64 bins.
+Native coverage percentages: see functional_coverage_report.txt.
+Source snapshot: sources/ (inputs unchanged throughout the run).
+Scope: the documented 17-instruction MIPS subset and initial coverage plan.
+Scoreboard checks final architectural state and event counts, not every retirement.
+FPGA, synthesis/timing and RTL code coverage are outside this run.

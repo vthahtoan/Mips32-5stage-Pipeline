@@ -1,0 +1,945 @@
+QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
+Start time: 15:00:29 on Oct 09,2026
+vcover report -cvg -details /home/s23521611/project/mips/mips_school/tb/functional_coverage_run/mips_functional_merged.ucdb -64 
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /mips_coverage_pkg
+=== Design Unit: work.mips_coverage_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                     11        na        na   100.00%
+        Coverpoints/Crosses         22        na        na        na
+            Covergroup Bins         86        86         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /mips_coverage_pkg/mips_functional_coverage/instruction_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    17         17          -                      
+    missing/total bins:                                     0         17          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_kind                                100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin kinds[0]                                      591          1          -    Covered              
+        bin kinds[1]                                       19          1          -    Covered              
+        bin kinds[2]                                       22          1          -    Covered              
+        bin kinds[3]                                      231          1          -    Covered              
+        bin kinds[4]                                      122          1          -    Covered              
+        bin kinds[5]                                       90          1          -    Covered              
+        bin kinds[6]                                       17          1          -    Covered              
+        bin kinds[7]                                       23          1          -    Covered              
+        bin kinds[8]                                       42          1          -    Covered              
+        bin kinds[9]                                       32          1          -    Covered              
+        bin kinds[10]                                      59          1          -    Covered              
+        bin kinds[11]                                      28          1          -    Covered              
+        bin kinds[12]                                     250          1          -    Covered              
+        bin kinds[13]                                      21          1          -    Covered              
+        bin kinds[14]                                      30          1          -    Covered              
+        bin kinds[15]                                      32          1          -    Covered              
+        bin kinds[16]                                      13          1          -    Covered              
+ Covergroup instance instructions                     100.00%        100          -    Covered              
+    covered/total bins:                                    17         17          -                      
+    missing/total bins:                                     0         17          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_kind                                100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin kinds[0]                                      591          1          -    Covered              
+        bin kinds[1]                                       19          1          -    Covered              
+        bin kinds[2]                                       22          1          -    Covered              
+        bin kinds[3]                                      231          1          -    Covered              
+        bin kinds[4]                                      122          1          -    Covered              
+        bin kinds[5]                                       90          1          -    Covered              
+        bin kinds[6]                                       17          1          -    Covered              
+        bin kinds[7]                                       23          1          -    Covered              
+        bin kinds[8]                                       42          1          -    Covered              
+        bin kinds[9]                                       32          1          -    Covered              
+        bin kinds[10]                                      59          1          -    Covered              
+        bin kinds[11]                                      28          1          -    Covered              
+        bin kinds[12]                                     250          1          -    Covered              
+        bin kinds[13]                                      21          1          -    Covered              
+        bin kinds[14]                                      30          1          -    Covered              
+        bin kinds[15]                                      32          1          -    Covered              
+        bin kinds[16]                                      13          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/immediate_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_value                               100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           56          1          -    Covered              
+        bin one                                            86          1          -    Covered              
+        bin max_positive                                   70          1          -    Covered              
+        bin min_negative                                   57          1          -    Covered              
+        bin all_ones                                       88          1          -    Covered              
+        bin other                                         275          1          -    Covered              
+ Covergroup instance immediates                       100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_value                               100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           56          1          -    Covered              
+        bin one                                            86          1          -    Covered              
+        bin max_positive                                   70          1          -    Covered              
+        bin min_negative                                   57          1          -    Covered              
+        bin all_ones                                       88          1          -    Covered              
+        bin other                                         275          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/shift_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sll                                           250          1          -    Covered              
+        bin srl                                            21          1          -    Covered              
+    Coverpoint cp_amount                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                          226          1          -    Covered              
+        bin middle                                         34          1          -    Covered              
+        bin thirty_one                                     11          1          -    Covered              
+    Cross operation_x_amount                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <srl,thirty_one>                            4          1          -    Covered              
+            bin <sll,thirty_one>                            7          1          -    Covered              
+            bin <srl,middle>                               13          1          -    Covered              
+            bin <sll,middle>                               21          1          -    Covered              
+            bin <srl,zero>                                  4          1          -    Covered              
+            bin <sll,zero>                                222          1          -    Covered              
+ Covergroup instance shifts                           100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sll                                           250          1          -    Covered              
+        bin srl                                            21          1          -    Covered              
+    Coverpoint cp_amount                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                          226          1          -    Covered              
+        bin middle                                         34          1          -    Covered              
+        bin thirty_one                                     11          1          -    Covered              
+    Cross operation_x_amount                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <srl,thirty_one>                            4          1          -    Covered              
+            bin <sll,thirty_one>                            7          1          -    Covered              
+            bin <srl,middle>                               13          1          -    Covered              
+            bin <sll,middle>                               21          1          -    Covered              
+            bin <srl,zero>                                  4          1          -    Covered              
+            bin <sll,zero>                                222          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/destination_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                      1077          1          -    Covered              
+        bin zero                                          239          1          -    Covered              
+ Covergroup instance destinations                     100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                      1077          1          -    Covered              
+        bin zero                                          239          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/memory_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin lw                                            122          1          -    Covered              
+        bin sw                                            231          1          -    Covered              
+    Coverpoint cp_address                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin first                                          14          1          -    Covered              
+        bin interior                                      320          1          -    Covered              
+        bin last                                           19          1          -    Covered              
+    Coverpoint cp_offset                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin negative                                      140          1          -    Covered              
+        bin zero                                           14          1          -    Covered              
+        bin positive                                      199          1          -    Covered              
+    Cross operation_x_address                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,last>                                  10          1          -    Covered              
+            bin <lw,last>                                   9          1          -    Covered              
+            bin <sw,first>                                  8          1          -    Covered              
+            bin <lw,first>                                  6          1          -    Covered              
+            bin <sw,interior>                             213          1          -    Covered              
+            bin <lw,interior>                             107          1          -    Covered              
+    Cross operation_x_offset                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,positive>                             143          1          -    Covered              
+            bin <lw,positive>                              56          1          -    Covered              
+            bin <sw,zero>                                   7          1          -    Covered              
+            bin <lw,zero>                                   7          1          -    Covered              
+            bin <sw,negative>                              81          1          -    Covered              
+            bin <lw,negative>                              59          1          -    Covered              
+ Covergroup instance memory                           100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin lw                                            122          1          -    Covered              
+        bin sw                                            231          1          -    Covered              
+    Coverpoint cp_address                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin first                                          14          1          -    Covered              
+        bin interior                                      320          1          -    Covered              
+        bin last                                           19          1          -    Covered              
+    Coverpoint cp_offset                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin negative                                      140          1          -    Covered              
+        bin zero                                           14          1          -    Covered              
+        bin positive                                      199          1          -    Covered              
+    Cross operation_x_address                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,last>                                  10          1          -    Covered              
+            bin <lw,last>                                   9          1          -    Covered              
+            bin <sw,first>                                  8          1          -    Covered              
+            bin <lw,first>                                  6          1          -    Covered              
+            bin <sw,interior>                             213          1          -    Covered              
+            bin <lw,interior>                             107          1          -    Covered              
+    Cross operation_x_offset                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,positive>                             143          1          -    Covered              
+            bin <lw,positive>                              56          1          -    Covered              
+            bin <sw,zero>                                   7          1          -    Covered              
+            bin <lw,zero>                                   7          1          -    Covered              
+            bin <sw,negative>                              81          1          -    Covered              
+            bin <lw,negative>                              59          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/load_destination_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                       109          1          -    Covered              
+        bin zero                                           13          1          -    Covered              
+ Covergroup instance load_destinations                100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                       109          1          -    Covered              
+        bin zero                                           13          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/branch_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    10         10          -                      
+    missing/total bins:                                     0         10          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin beq                                            30          1          -    Covered              
+        bin bne                                            32          1          -    Covered              
+    Coverpoint cp_taken                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin not_taken                                      23          1          -    Covered              
+        bin taken                                          39          1          -    Covered              
+    Coverpoint cp_direction                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin forward_or_zero                                42          1          -    Covered              
+        bin backward                                       20          1          -    Covered              
+    Cross operation_x_outcome                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <bne,taken>                                19          1          -    Covered              
+            bin <beq,taken>                                20          1          -    Covered              
+            bin <bne,not_taken>                            13          1          -    Covered              
+            bin <beq,not_taken>                            10          1          -    Covered              
+ Covergroup instance branches                         100.00%        100          -    Covered              
+    covered/total bins:                                    10         10          -                      
+    missing/total bins:                                     0         10          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin beq                                            30          1          -    Covered              
+        bin bne                                            32          1          -    Covered              
+    Coverpoint cp_taken                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin not_taken                                      23          1          -    Covered              
+        bin taken                                          39          1          -    Covered              
+    Coverpoint cp_direction                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin forward_or_zero                                42          1          -    Covered              
+        bin backward                                       20          1          -    Covered              
+    Cross operation_x_outcome                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <bne,taken>                                19          1          -    Covered              
+            bin <beq,taken>                                20          1          -    Covered              
+            bin <bne,not_taken>                            13          1          -    Covered              
+            bin <beq,not_taken>                            10          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/jump_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_jump                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin accepted                                       13          1          -    Covered              
+        bin cancelled_by_branch                             6          1          -    Covered              
+ Covergroup instance jumps                            100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_jump                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin accepted                                       13          1          -    Covered              
+        bin cancelled_by_branch                             6          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/hazard_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_consumer                            100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu                                            54          1          -    Covered              
+        bin store_data                                     30          1          -    Covered              
+        bin branch                                          6          1          -    Covered              
+ Covergroup instance load_use_hazards                 100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_consumer                            100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu                                            54          1          -    Covered              
+        bin store_data                                     30          1          -    Covered              
+        bin branch                                          6          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/forwarding_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operand                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin a                                            1338          1          -    Covered              
+        bin b                                             855          1          -    Covered              
+    Coverpoint cp_source                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin register_file                                1835          1          -    Covered              
+        bin ex_mem                                        195          1          -    Covered              
+        bin mem_wb                                        163          1          -    Covered              
+    Cross operand_x_source                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <b,mem_wb>                                 55          1          -    Covered              
+            bin <a,mem_wb>                                108          1          -    Covered              
+            bin <b,ex_mem>                                157          1          -    Covered              
+            bin <a,ex_mem>                                 38          1          -    Covered              
+            bin <b,register_file>                         643          1          -    Covered              
+            bin <a,register_file>                        1192          1          -    Covered              
+ Covergroup instance forwarding                       100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operand                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin a                                            1338          1          -    Covered              
+        bin b                                             855          1          -    Covered              
+    Coverpoint cp_source                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin register_file                                1835          1          -    Covered              
+        bin ex_mem                                        195          1          -    Covered              
+        bin mem_wb                                        163          1          -    Covered              
+    Cross operand_x_source                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <b,mem_wb>                                 55          1          -    Covered              
+            bin <a,mem_wb>                                108          1          -    Covered              
+            bin <b,ex_mem>                                157          1          -    Covered              
+            bin <a,ex_mem>                                 38          1          -    Covered              
+            bin <b,register_file>                         643          1          -    Covered              
+            bin <a,register_file>                        1192          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/load_distance_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_distance                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin immediate                                      90          1          -    Covered              
+        bin one_instruction_gap                            18          1          -    Covered              
+ Covergroup instance load_distances                   100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_distance                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin immediate                                      90          1          -    Covered              
+        bin one_instruction_gap                            18          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /mips_coverage_pkg/mips_functional_coverage/instruction_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    17         17          -                      
+    missing/total bins:                                     0         17          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_kind                                100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin kinds[0]                                      591          1          -    Covered              
+        bin kinds[1]                                       19          1          -    Covered              
+        bin kinds[2]                                       22          1          -    Covered              
+        bin kinds[3]                                      231          1          -    Covered              
+        bin kinds[4]                                      122          1          -    Covered              
+        bin kinds[5]                                       90          1          -    Covered              
+        bin kinds[6]                                       17          1          -    Covered              
+        bin kinds[7]                                       23          1          -    Covered              
+        bin kinds[8]                                       42          1          -    Covered              
+        bin kinds[9]                                       32          1          -    Covered              
+        bin kinds[10]                                      59          1          -    Covered              
+        bin kinds[11]                                      28          1          -    Covered              
+        bin kinds[12]                                     250          1          -    Covered              
+        bin kinds[13]                                      21          1          -    Covered              
+        bin kinds[14]                                      30          1          -    Covered              
+        bin kinds[15]                                      32          1          -    Covered              
+        bin kinds[16]                                      13          1          -    Covered              
+ Covergroup instance instructions                     100.00%        100          -    Covered              
+    covered/total bins:                                    17         17          -                      
+    missing/total bins:                                     0         17          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_kind                                100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin kinds[0]                                      591          1          -    Covered              
+        bin kinds[1]                                       19          1          -    Covered              
+        bin kinds[2]                                       22          1          -    Covered              
+        bin kinds[3]                                      231          1          -    Covered              
+        bin kinds[4]                                      122          1          -    Covered              
+        bin kinds[5]                                       90          1          -    Covered              
+        bin kinds[6]                                       17          1          -    Covered              
+        bin kinds[7]                                       23          1          -    Covered              
+        bin kinds[8]                                       42          1          -    Covered              
+        bin kinds[9]                                       32          1          -    Covered              
+        bin kinds[10]                                      59          1          -    Covered              
+        bin kinds[11]                                      28          1          -    Covered              
+        bin kinds[12]                                     250          1          -    Covered              
+        bin kinds[13]                                      21          1          -    Covered              
+        bin kinds[14]                                      30          1          -    Covered              
+        bin kinds[15]                                      32          1          -    Covered              
+        bin kinds[16]                                      13          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/immediate_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_value                               100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           56          1          -    Covered              
+        bin one                                            86          1          -    Covered              
+        bin max_positive                                   70          1          -    Covered              
+        bin min_negative                                   57          1          -    Covered              
+        bin all_ones                                       88          1          -    Covered              
+        bin other                                         275          1          -    Covered              
+ Covergroup instance immediates                       100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_value                               100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           56          1          -    Covered              
+        bin one                                            86          1          -    Covered              
+        bin max_positive                                   70          1          -    Covered              
+        bin min_negative                                   57          1          -    Covered              
+        bin all_ones                                       88          1          -    Covered              
+        bin other                                         275          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/shift_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sll                                           250          1          -    Covered              
+        bin srl                                            21          1          -    Covered              
+    Coverpoint cp_amount                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                          226          1          -    Covered              
+        bin middle                                         34          1          -    Covered              
+        bin thirty_one                                     11          1          -    Covered              
+    Cross operation_x_amount                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <srl,thirty_one>                            4          1          -    Covered              
+            bin <sll,thirty_one>                            7          1          -    Covered              
+            bin <srl,middle>                               13          1          -    Covered              
+            bin <sll,middle>                               21          1          -    Covered              
+            bin <srl,zero>                                  4          1          -    Covered              
+            bin <sll,zero>                                222          1          -    Covered              
+ Covergroup instance shifts                           100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin sll                                           250          1          -    Covered              
+        bin srl                                            21          1          -    Covered              
+    Coverpoint cp_amount                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                          226          1          -    Covered              
+        bin middle                                         34          1          -    Covered              
+        bin thirty_one                                     11          1          -    Covered              
+    Cross operation_x_amount                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <srl,thirty_one>                            4          1          -    Covered              
+            bin <sll,thirty_one>                            7          1          -    Covered              
+            bin <srl,middle>                               13          1          -    Covered              
+            bin <sll,middle>                               21          1          -    Covered              
+            bin <srl,zero>                                  4          1          -    Covered              
+            bin <sll,zero>                                222          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/destination_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                      1077          1          -    Covered              
+        bin zero                                          239          1          -    Covered              
+ Covergroup instance destinations                     100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                      1077          1          -    Covered              
+        bin zero                                          239          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/memory_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin lw                                            122          1          -    Covered              
+        bin sw                                            231          1          -    Covered              
+    Coverpoint cp_address                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin first                                          14          1          -    Covered              
+        bin interior                                      320          1          -    Covered              
+        bin last                                           19          1          -    Covered              
+    Coverpoint cp_offset                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin negative                                      140          1          -    Covered              
+        bin zero                                           14          1          -    Covered              
+        bin positive                                      199          1          -    Covered              
+    Cross operation_x_address                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,last>                                  10          1          -    Covered              
+            bin <lw,last>                                   9          1          -    Covered              
+            bin <sw,first>                                  8          1          -    Covered              
+            bin <lw,first>                                  6          1          -    Covered              
+            bin <sw,interior>                             213          1          -    Covered              
+            bin <lw,interior>                             107          1          -    Covered              
+    Cross operation_x_offset                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,positive>                             143          1          -    Covered              
+            bin <lw,positive>                              56          1          -    Covered              
+            bin <sw,zero>                                   7          1          -    Covered              
+            bin <lw,zero>                                   7          1          -    Covered              
+            bin <sw,negative>                              81          1          -    Covered              
+            bin <lw,negative>                              59          1          -    Covered              
+ Covergroup instance memory                           100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin lw                                            122          1          -    Covered              
+        bin sw                                            231          1          -    Covered              
+    Coverpoint cp_address                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin first                                          14          1          -    Covered              
+        bin interior                                      320          1          -    Covered              
+        bin last                                           19          1          -    Covered              
+    Coverpoint cp_offset                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin negative                                      140          1          -    Covered              
+        bin zero                                           14          1          -    Covered              
+        bin positive                                      199          1          -    Covered              
+    Cross operation_x_address                         100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,last>                                  10          1          -    Covered              
+            bin <lw,last>                                   9          1          -    Covered              
+            bin <sw,first>                                  8          1          -    Covered              
+            bin <lw,first>                                  6          1          -    Covered              
+            bin <sw,interior>                             213          1          -    Covered              
+            bin <lw,interior>                             107          1          -    Covered              
+    Cross operation_x_offset                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <sw,positive>                             143          1          -    Covered              
+            bin <lw,positive>                              56          1          -    Covered              
+            bin <sw,zero>                                   7          1          -    Covered              
+            bin <lw,zero>                                   7          1          -    Covered              
+            bin <sw,negative>                              81          1          -    Covered              
+            bin <lw,negative>                              59          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/load_destination_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                       109          1          -    Covered              
+        bin zero                                           13          1          -    Covered              
+ Covergroup instance load_destinations                100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_destination                         100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin nonzero                                       109          1          -    Covered              
+        bin zero                                           13          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/branch_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    10         10          -                      
+    missing/total bins:                                     0         10          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin beq                                            30          1          -    Covered              
+        bin bne                                            32          1          -    Covered              
+    Coverpoint cp_taken                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin not_taken                                      23          1          -    Covered              
+        bin taken                                          39          1          -    Covered              
+    Coverpoint cp_direction                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin forward_or_zero                                42          1          -    Covered              
+        bin backward                                       20          1          -    Covered              
+    Cross operation_x_outcome                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <bne,taken>                                19          1          -    Covered              
+            bin <beq,taken>                                20          1          -    Covered              
+            bin <bne,not_taken>                            13          1          -    Covered              
+            bin <beq,not_taken>                            10          1          -    Covered              
+ Covergroup instance branches                         100.00%        100          -    Covered              
+    covered/total bins:                                    10         10          -                      
+    missing/total bins:                                     0         10          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operation                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin beq                                            30          1          -    Covered              
+        bin bne                                            32          1          -    Covered              
+    Coverpoint cp_taken                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin not_taken                                      23          1          -    Covered              
+        bin taken                                          39          1          -    Covered              
+    Coverpoint cp_direction                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin forward_or_zero                                42          1          -    Covered              
+        bin backward                                       20          1          -    Covered              
+    Cross operation_x_outcome                         100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <bne,taken>                                19          1          -    Covered              
+            bin <beq,taken>                                20          1          -    Covered              
+            bin <bne,not_taken>                            13          1          -    Covered              
+            bin <beq,not_taken>                            10          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/jump_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_jump                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin accepted                                       13          1          -    Covered              
+        bin cancelled_by_branch                             6          1          -    Covered              
+ Covergroup instance jumps                            100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_jump                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin accepted                                       13          1          -    Covered              
+        bin cancelled_by_branch                             6          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/hazard_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_consumer                            100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu                                            54          1          -    Covered              
+        bin store_data                                     30          1          -    Covered              
+        bin branch                                          6          1          -    Covered              
+ Covergroup instance load_use_hazards                 100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_consumer                            100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu                                            54          1          -    Covered              
+        bin store_data                                     30          1          -    Covered              
+        bin branch                                          6          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/forwarding_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operand                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin a                                            1338          1          -    Covered              
+        bin b                                             855          1          -    Covered              
+    Coverpoint cp_source                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin register_file                                1835          1          -    Covered              
+        bin ex_mem                                        195          1          -    Covered              
+        bin mem_wb                                        163          1          -    Covered              
+    Cross operand_x_source                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <b,mem_wb>                                 55          1          -    Covered              
+            bin <a,mem_wb>                                108          1          -    Covered              
+            bin <b,ex_mem>                                157          1          -    Covered              
+            bin <a,ex_mem>                                 38          1          -    Covered              
+            bin <b,register_file>                         643          1          -    Covered              
+            bin <a,register_file>                        1192          1          -    Covered              
+ Covergroup instance forwarding                       100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_operand                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin a                                            1338          1          -    Covered              
+        bin b                                             855          1          -    Covered              
+    Coverpoint cp_source                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin register_file                                1835          1          -    Covered              
+        bin ex_mem                                        195          1          -    Covered              
+        bin mem_wb                                        163          1          -    Covered              
+    Cross operand_x_source                            100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <b,mem_wb>                                 55          1          -    Covered              
+            bin <a,mem_wb>                                108          1          -    Covered              
+            bin <b,ex_mem>                                157          1          -    Covered              
+            bin <a,ex_mem>                                 38          1          -    Covered              
+            bin <b,register_file>                         643          1          -    Covered              
+            bin <a,register_file>                        1192          1          -    Covered              
+ TYPE /mips_coverage_pkg/mips_functional_coverage/load_distance_cg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_distance                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin immediate                                      90          1          -    Covered              
+        bin one_instruction_gap                            18          1          -    Covered              
+ Covergroup instance load_distances                   100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_distance                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin immediate                                      90          1          -    Covered              
+        bin one_instruction_gap                            18          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 11
+
+Total Coverage By Instance (filtered view): 100.00%
+
+End time: 15:00:29 on Oct 09,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

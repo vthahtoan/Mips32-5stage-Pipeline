@@ -1,0 +1,7 @@
+# echo "FINAL VERIFICATION PASS: 18 positive CPU runs, 2 negative CPU runs, $final_positive_checks positive scoreboard comparisons, 64/64 planned bins"
+# FINAL VERIFICATION PASS: 18 positive CPU runs, 2 negative CPU runs, 5290 positive scoreboard comparisons, 64/64 planned bins
+# echo "FINAL EVIDENCE DIRECTORY: $final_evidence_dir"
+# FINAL EVIDENCE DIRECTORY: /home/s23521611/project/mips/mips_school/tb/final_regression_run/20261009_145939
+# echo "Download this entire evidence directory, including sources/, before cleaning generated simulation files."
+# Download this entire evidence directory, including sources/, before cleaning generated simulation files.
+#  quit -f

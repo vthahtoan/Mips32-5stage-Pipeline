@@ -1,0 +1,325 @@
+# do [file join $negative_tb_dir run_scoreboard.do]
+# Portable copy: start vsim from this bundle's tb directory.
+# Run all three groups: do run_scoreboard.do
+# catch {quit -sim}
+# 0
+# onerror {quit -code 1 -f}
+# set project_dir [file normalize ..]
+# /home/s23521611/project/mips/mips_school
+# set tb_dir [file join $project_dir tb]
+# /home/s23521611/project/mips/mips_school/tb
+# set rtl_dir [file join $project_dir src]
+# /home/s23521611/project/mips/mips_school/src
+# set run_dir [file join $tb_dir scoreboard_run]
+# /home/s23521611/project/mips/mips_school/tb/scoreboard_run
+# file mkdir $run_dir
+# file copy -force [file join $project_dir instruction.txt] [file join $run_dir instruction.txt]
+# cd $run_dir
+# set lib_dir [file join $run_dir scoreboard_work]
+# /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work
+# if {![file isdirectory $lib_dir]} { vlib $lib_dir }
+# set rtl_files [list]
+# foreach name {ALU ALUControl Controller DMEM EX_MEM_reg Extender Forwarding HazardDetection ID_EX_reg IF_ID_reg IMEM MEM_WB_reg PC RegisterFile toplevel} {
+#     lappend rtl_files [file join $rtl_dir [format "%s.v" $name]]
+# }
+# eval vlog -work [list $lib_dir] $rtl_files
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:59:39 on Oct 09,2026
+# vlog -work /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work /home/s23521611/project/mips/mips_school/src/ALU.v /home/s23521611/project/mips/mips_school/src/ALUControl.v /home/s23521611/project/mips/mips_school/src/Controller.v /home/s23521611/project/mips/mips_school/src/DMEM.v /home/s23521611/project/mips/mips_school/src/EX_MEM_reg.v /home/s23521611/project/mips/mips_school/src/Extender.v /home/s23521611/project/mips/mips_school/src/Forwarding.v /home/s23521611/project/mips/mips_school/src/HazardDetection.v /home/s23521611/project/mips/mips_school/src/ID_EX_reg.v /home/s23521611/project/mips/mips_school/src/IF_ID_reg.v /home/s23521611/project/mips/mips_school/src/IMEM.v /home/s23521611/project/mips/mips_school/src/MEM_WB_reg.v /home/s23521611/project/mips/mips_school/src/PC.v /home/s23521611/project/mips/mips_school/src/RegisterFile.v /home/s23521611/project/mips/mips_school/src/toplevel.v 
+# -- Compiling module ALU
+# -- Compiling module ALUControl
+# -- Compiling module Controller
+# -- Compiling module DMEM
+# -- Compiling module EX_MEM_reg
+# -- Compiling module Extender
+# -- Compiling module Forwarding
+# -- Compiling module HazardDetection
+# -- Compiling module ID_EX_reg
+# -- Compiling module IF_ID_reg
+# -- Compiling module IMEM
+# -- Compiling module MEM_WB_reg
+# -- Compiling module PC
+# -- Compiling module RegisterFile
+# -- Compiling module toplevel
+# 
+# Top level modules:
+# 	toplevel
+# End time: 14:59:39 on Oct 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work $lib_dir [file join $tb_dir mips_instruction_pkg.sv] [file join $tb_dir mips_reference_pkg.sv] [file join $tb_dir mips_scoreboard_pkg.sv] [file join $tb_dir tb_mips_scoreboard.sv]
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 14:59:39 on Oct 09,2026
+# vlog -sv -work /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work /home/s23521611/project/mips/mips_school/tb/mips_instruction_pkg.sv /home/s23521611/project/mips/mips_school/tb/mips_reference_pkg.sv /home/s23521611/project/mips/mips_school/tb/mips_scoreboard_pkg.sv /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv 
+# -- Compiling package mips_instruction_pkg
+# -- Compiling package mips_reference_pkg
+# -- Compiling package mips_scoreboard_pkg
+# -- Importing package mips_reference_pkg
+# -- Compiling module tb_mips_scoreboard
+# -- Importing package mips_instruction_pkg
+# -- Importing package mips_scoreboard_pkg
+# 
+# Top level modules:
+# 	tb_mips_scoreboard
+# End time: 14:59:39 on Oct 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# set reference_names {ALU_AND_SHIFT MEMORY BRANCH_AND_JUMP}
+# ALU_AND_SHIFT MEMORY BRANCH_AND_JUMP
+# set reference_expected_checks {293 293 293}
+# 293 293 293
+# set reference_expected_model_checks {33 23 30}
+# 33 23 30
+# set reference_expected_encodings {33 22 37}
+# 33 22 37
+# set reference_all_loaded_kinds 0
+# 0
+# set reference_total_checks 0
+# 0
+# set reference_total_model_checks 0
+# 0
+# set reference_total_encodings 0
+# 0
+# onbreak {resume}
+# foreach reference_test_id {0 1 2} {
+#     catch {quit -sim}
+#     vsim -voptargs=+acc -onfinish stop -lib $lib_dir tb_mips_scoreboard +TEST=$reference_test_id
+#     run -all
+#     set reference_errors [examine -radix decimal sim:/tb_mips_scoreboard/errors]
+#     set reference_model_errors [examine -radix decimal sim:/tb_mips_scoreboard/model_errors]
+#     set reference_model_checks [examine -radix decimal sim:/tb_mips_scoreboard/model_checks]
+#     set reference_model_steps [examine -radix decimal sim:/tb_mips_scoreboard/model_steps]
+#     set reference_scoreboard_errors [examine -radix decimal sim:/tb_mips_scoreboard/scoreboard_errors]
+#     set reference_checks [examine -radix decimal sim:/tb_mips_scoreboard/scoreboard_checks]
+#     set reference_encodings [examine -radix decimal sim:/tb_mips_scoreboard/encoder_checks]
+#     set reference_writes [examine -radix decimal sim:/tb_mips_scoreboard/writes_seen]
+#     set reference_stalls [examine -radix decimal sim:/tb_mips_scoreboard/stalls_seen]
+#     set reference_taken [examine -radix decimal sim:/tb_mips_scoreboard/branches_taken]
+#     set reference_not_taken [examine -radix decimal sim:/tb_mips_scoreboard/branches_not_taken]
+#     set reference_jumps [examine -radix decimal sim:/tb_mips_scoreboard/jumps_seen]
+#     set reference_loaded_kinds [examine -radix unsigned sim:/tb_mips_scoreboard/loaded_kinds]
+#     set reference_name [lindex $reference_names $reference_test_id]
+#     echo "SCOREBOARD RESULT ${reference_name}: encoder_errors=$reference_errors scoreboard_errors=$reference_scoreboard_errors model_errors=$reference_model_errors checks=$reference_checks model_checks=$reference_model_checks model_steps=$reference_model_steps encoder_checks=$reference_encodings writes=$reference_writes stalls=$reference_stalls taken=$reference_taken not_taken=$reference_not_taken jumps=$reference_jumps"
+#     if {$reference_errors != 0 || $reference_scoreboard_errors != 0 || $reference_model_errors != 0 || $reference_model_checks != [lindex $reference_expected_model_checks $reference_test_id] || $reference_checks != [lindex $reference_expected_checks $reference_test_id] || $reference_encodings != [lindex $reference_expected_encodings $reference_test_id]} {
+#         set reference_first_failure [examine sim:/tb_mips_scoreboard/scoreboard_first_failure]
+#         echo "FIRST SCOREBOARD FAILURE: $reference_first_failure"
+#         error "SCOREBOARD FAIL: $reference_name"
+#     }
+#     echo "SCOREBOARD PASS: $reference_name"
+#     set reference_all_loaded_kinds [expr {$reference_all_loaded_kinds | $reference_loaded_kinds}]
+#     incr reference_total_checks $reference_checks
+#     incr reference_total_model_checks $reference_model_checks
+#     incr reference_total_encodings $reference_encodings
+# }
+# vsim -voptargs="+acc" -onfinish stop -lib /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work tb_mips_scoreboard "+TEST=0" 
+# Start time: 14:59:39 on Oct 09,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.mips_reference_pkg(fast)
+# Loading work.mips_scoreboard_pkg(fast)
+# Loading work.mips_instruction_pkg(fast)
+# Loading work.tb_mips_scoreboard(fast)
+# Loading work.toplevel(fast)
+# Loading work.PC(fast)
+# Loading work.IMEM(fast)
+# Loading work.IF_ID_reg(fast)
+# Loading work.Controller(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.Extender(fast)
+# Loading work.HazardDetection(fast)
+# Loading work.ID_EX_reg(fast)
+# Loading work.Forwarding(fast)
+# Loading work.ALUControl(fast)
+# Loading work.ALU(fast)
+# Loading work.EX_MEM_reg(fast)
+# Loading work.DMEM(fast)
+# Loading work.MEM_WB_reg(fast)
+# SCOREBOARD TEST PASS: test=0 checks=293 model_checks=33
+# ** Note: $finish    : /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv(349)
+#    Time: 830 ns  Iteration: 1  Instance: /tb_mips_scoreboard
+# Break in Module tb_mips_scoreboard at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 349
+# Stopped at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 349
+# SCOREBOARD RESULT ALU_AND_SHIFT: encoder_errors=0 scoreboard_errors=0 model_errors=0 checks=293 model_checks=33 model_steps=33 encoder_checks=33 writes=32 stalls=0 taken=0 not_taken=0 jumps=0
+# SCOREBOARD PASS: ALU_AND_SHIFT
+# End time: 14:59:40 on Oct 09,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" -onfinish stop -lib /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work tb_mips_scoreboard "+TEST=1" 
+# Start time: 14:59:40 on Oct 09,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.mips_reference_pkg(fast)
+# Loading work.mips_scoreboard_pkg(fast)
+# Loading work.mips_instruction_pkg(fast)
+# Loading work.tb_mips_scoreboard(fast)
+# Loading work.toplevel(fast)
+# Loading work.PC(fast)
+# Loading work.IMEM(fast)
+# Loading work.IF_ID_reg(fast)
+# Loading work.Controller(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.Extender(fast)
+# Loading work.HazardDetection(fast)
+# Loading work.ID_EX_reg(fast)
+# Loading work.Forwarding(fast)
+# Loading work.ALUControl(fast)
+# Loading work.ALU(fast)
+# Loading work.EX_MEM_reg(fast)
+# Loading work.DMEM(fast)
+# Loading work.MEM_WB_reg(fast)
+# SCOREBOARD TEST PASS: test=1 checks=293 model_checks=23
+# ** Note: $finish    : /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv(349)
+#    Time: 830 ns  Iteration: 1  Instance: /tb_mips_scoreboard
+# Break in Module tb_mips_scoreboard at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 349
+# Stopped at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 349
+# SCOREBOARD RESULT MEMORY: encoder_errors=0 scoreboard_errors=0 model_errors=0 checks=293 model_checks=23 model_steps=22 encoder_checks=22 writes=14 stalls=4 taken=0 not_taken=0 jumps=0
+# SCOREBOARD PASS: MEMORY
+# End time: 14:59:41 on Oct 09,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" -onfinish stop -lib /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work tb_mips_scoreboard "+TEST=2" 
+# Start time: 14:59:41 on Oct 09,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.mips_reference_pkg(fast)
+# Loading work.mips_scoreboard_pkg(fast)
+# Loading work.mips_instruction_pkg(fast)
+# Loading work.tb_mips_scoreboard(fast)
+# Loading work.toplevel(fast)
+# Loading work.PC(fast)
+# Loading work.IMEM(fast)
+# Loading work.IF_ID_reg(fast)
+# Loading work.Controller(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.Extender(fast)
+# Loading work.HazardDetection(fast)
+# Loading work.ID_EX_reg(fast)
+# Loading work.Forwarding(fast)
+# Loading work.ALUControl(fast)
+# Loading work.ALU(fast)
+# Loading work.EX_MEM_reg(fast)
+# Loading work.DMEM(fast)
+# Loading work.MEM_WB_reg(fast)
+# SCOREBOARD TEST PASS: test=2 checks=293 model_checks=30
+# ** Note: $finish    : /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv(349)
+#    Time: 830 ns  Iteration: 1  Instance: /tb_mips_scoreboard
+# Break in Module tb_mips_scoreboard at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 349
+# Stopped at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 349
+# SCOREBOARD RESULT BRANCH_AND_JUMP: encoder_errors=0 scoreboard_errors=0 model_errors=0 checks=293 model_checks=30 model_steps=28 encoder_checks=37 writes=17 stalls=1 taken=6 not_taken=3 jumps=2
+# SCOREBOARD PASS: BRANCH_AND_JUMP
+# if {$reference_all_loaded_kinds != 131071} {
+#     error "SCOREBOARD FAIL: the programs did not load all 17 instruction kinds"
+# }
+# echo "SCOREBOARD SUITE PASS: 3 groups, $reference_total_checks CPU checks, $reference_total_model_checks model checks, $reference_total_encodings encoding checks, 17 instruction kinds loaded"
+# SCOREBOARD SUITE PASS: 3 groups, 879 CPU checks, 86 model checks, 92 encoding checks, 17 instruction kinds loaded
+# For a single group after running this script:
+# quit -sim
+# vsim -voptargs=+acc -onfinish stop -lib $lib_dir tb_mips_scoreboard +TEST=2
+# run -all
+# 
+# onbreak {resume}
+# foreach negative_case {{0 1 REGISTER} {1 2 MEMORY}} {
+#     set negative_test [lindex $negative_case 0]
+#     set negative_mode [lindex $negative_case 1]
+#     set negative_name [lindex $negative_case 2]
+#     catch {quit -sim}
+#     vsim -voptargs=+acc -onfinish stop -lib $lib_dir tb_mips_scoreboard +TEST=$negative_test +INJECT_DUT_ERROR=$negative_mode
+#     run -all
+#     set negative_encoder [examine -radix decimal sim:/tb_mips_scoreboard/errors]
+#     set negative_model [examine -radix decimal sim:/tb_mips_scoreboard/model_errors]
+#     set negative_model_checks [examine -radix decimal sim:/tb_mips_scoreboard/model_checks]
+#     set negative_encodings [examine -radix decimal sim:/tb_mips_scoreboard/encoder_checks]
+#     set negative_errors [examine -radix decimal sim:/tb_mips_scoreboard/scoreboard_errors]
+#     set negative_checks [examine -radix decimal sim:/tb_mips_scoreboard/scoreboard_checks]
+#     echo "SCOREBOARD NEGATIVE RESULT $negative_name: encoder=$negative_encoder model=$negative_model scoreboard=$negative_errors checks=$negative_checks"
+#     if {$negative_encoder != 0 || $negative_model != 0 || $negative_errors != 1 || $negative_checks != 293 || $negative_model_checks != [lindex {33 23} $negative_test] || $negative_encodings != [lindex {33 22} $negative_test]} {
+#         error "SCOREBOARD NEGATIVE FAIL: $negative_name"
+#     }
+#     echo "SCOREBOARD NEGATIVE PASS: $negative_name corruption detected"
+# }
+# End time: 14:59:42 on Oct 09,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" -onfinish stop -lib /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work tb_mips_scoreboard "+TEST=0" "+INJECT_DUT_ERROR=1" 
+# Start time: 14:59:42 on Oct 09,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.mips_reference_pkg(fast)
+# Loading work.mips_scoreboard_pkg(fast)
+# Loading work.mips_instruction_pkg(fast)
+# Loading work.tb_mips_scoreboard(fast)
+# Loading work.toplevel(fast)
+# Loading work.PC(fast)
+# Loading work.IMEM(fast)
+# Loading work.IF_ID_reg(fast)
+# Loading work.Controller(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.Extender(fast)
+# Loading work.HazardDetection(fast)
+# Loading work.ID_EX_reg(fast)
+# Loading work.Forwarding(fast)
+# Loading work.ALUControl(fast)
+# Loading work.ALU(fast)
+# Loading work.EX_MEM_reg(fast)
+# Loading work.DMEM(fast)
+# Loading work.MEM_WB_reg(fast)
+# SCOREBOARD FAIL CPU r3: expected=00000022 actual=00000023
+# ** Fatal: SCOREBOARD TEST FAIL: encoder=0 model=0 scoreboard=1
+#    Time: 830 ns  Scope: tb_mips_scoreboard File: /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv Line: 345
+# ** Note: $finish    : /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv(345)
+#    Time: 830 ns  Iteration: 1  Instance: /tb_mips_scoreboard
+# Break in Module tb_mips_scoreboard at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 345
+# Stopped at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 345
+# SCOREBOARD NEGATIVE RESULT REGISTER: encoder=0 model=0 scoreboard=1 checks=293
+# SCOREBOARD NEGATIVE PASS: REGISTER corruption detected
+# End time: 14:59:43 on Oct 09,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# vsim -voptargs="+acc" -onfinish stop -lib /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_work tb_mips_scoreboard "+TEST=1" "+INJECT_DUT_ERROR=2" 
+# Start time: 14:59:43 on Oct 09,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.mips_reference_pkg(fast)
+# Loading work.mips_scoreboard_pkg(fast)
+# Loading work.mips_instruction_pkg(fast)
+# Loading work.tb_mips_scoreboard(fast)
+# Loading work.toplevel(fast)
+# Loading work.PC(fast)
+# Loading work.IMEM(fast)
+# Loading work.IF_ID_reg(fast)
+# Loading work.Controller(fast)
+# Loading work.RegisterFile(fast)
+# Loading work.Extender(fast)
+# Loading work.HazardDetection(fast)
+# Loading work.ID_EX_reg(fast)
+# Loading work.Forwarding(fast)
+# Loading work.ALUControl(fast)
+# Loading work.ALU(fast)
+# Loading work.EX_MEM_reg(fast)
+# Loading work.DMEM(fast)
+# Loading work.MEM_WB_reg(fast)
+# SCOREBOARD FAIL CPU memory byte 64: expected=0000007b actual=0000007a
+# ** Fatal: SCOREBOARD TEST FAIL: encoder=0 model=0 scoreboard=1
+#    Time: 830 ns  Scope: tb_mips_scoreboard File: /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv Line: 345
+# ** Note: $finish    : /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv(345)
+#    Time: 830 ns  Iteration: 1  Instance: /tb_mips_scoreboard
+# Break in Module tb_mips_scoreboard at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 345
+# Stopped at /home/s23521611/project/mips/mips_school/tb/tb_mips_scoreboard.sv line 345
+# SCOREBOARD NEGATIVE RESULT MEMORY: encoder=0 model=0 scoreboard=1 checks=293
+# SCOREBOARD NEGATIVE PASS: MEMORY corruption detected
+# echo "SCOREBOARD NEGATIVE SUITE PASS: register and memory corruption detected"
+# SCOREBOARD NEGATIVE SUITE PASS: register and memory corruption detected
+# 879
+# End time: 14:59:44 on Oct 09,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# 0
+# /home/s23521611/project/mips/mips_school/tb/scoreboard_run/scoreboard_negative.log

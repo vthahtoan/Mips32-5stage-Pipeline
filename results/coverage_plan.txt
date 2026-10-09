@@ -1,0 +1,16 @@
+Initial MIPS functional coverage plan: 64 bins (not all possible CPU behavior).
+Only DUT events from passing tests are merged. No code coverage is requested.
+instruction_mask: 17/17 missing={}
+immediate_mask: 6/6 missing={}
+shift_mask: 6/6 missing={}
+destination_mask: 2/2 missing={}
+memory_address_mask: 6/6 missing={}
+memory_offset_mask: 6/6 missing={}
+load_destination_mask: 2/2 missing={}
+branch_outcome_mask: 4/4 missing={}
+branch_direction_mask: 2/2 missing={}
+jump_mask: 2/2 missing={}
+hazard_mask: 3/3 missing={}
+forwarding_mask: 6/6 missing={}
+load_distance_mask: 2/2 missing={}
+FUNCTIONAL COVERAGE PLAN: 64/64 bins (100.00%)
